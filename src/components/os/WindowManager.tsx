@@ -13,15 +13,19 @@ import ContactApp from "../apps/ContactApp";
 interface WindowManagerProps {
   openApps: string[];
   activeApp: string | null;
+  minimizedApps: string[];
   onCloseApp: (appId: string) => void;
   onFocusApp: (appId: string) => void;
+  onMinimizeApp: (appId: string) => void;
 }
 
 const WindowManager: React.FC<WindowManagerProps> = ({
   openApps,
   activeApp,
+  minimizedApps,
   onCloseApp,
   onFocusApp,
+  onMinimizeApp,
 }) => {
   const getAppComponent = (appId: string) => {
     switch (appId) {
@@ -79,8 +83,10 @@ const WindowManager: React.FC<WindowManagerProps> = ({
               key={appId}
               title={getAppTitle(appId)}
               isActive={activeApp === appId}
+              isMinimized={minimizedApps.includes(appId)}
               onClose={() => onCloseApp(appId)}
               onFocus={() => onFocusApp(appId)}
+              onMinimize={() => onMinimizeApp(appId)}
               initialPosition={{
                 x: 50 + index * 30,
                 y: 50 + index * 30,

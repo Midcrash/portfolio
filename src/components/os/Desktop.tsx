@@ -9,11 +9,27 @@ import WindowManager from "./WindowManager";
 const Desktop: React.FC = () => {
   const [openApps, setOpenApps] = useState<string[]>([]);
   const [activeApp, setActiveApp] = useState<string | null>(null);
+  const [minimizedApps, setMinimizedApps] = useState<string[]>([]);
 
   const openApp = (appId: string) => {
     if (!openApps.includes(appId)) {
       setOpenApps([...openApps, appId]);
     }
+    // If app is minimized, unminimize it
+    if (minimizedApps.includes(appId)) {
+      setMinimizedApps(minimizedApps.filter((id) => id !== appId));
+    }
+    setActiveApp(appId);
+  };
+
+  const minimizeApp = (appId: string) => {
+    if (!minimizedApps.includes(appId)) {
+      setMinimizedApps([...minimizedApps, appId]);
+    }
+  };
+
+  const unminimizeApp = (appId: string) => {
+    setMinimizedApps(minimizedApps.filter((id) => id !== appId));
     setActiveApp(appId);
   };
 
@@ -44,8 +60,10 @@ const Desktop: React.FC = () => {
       <WindowManager
         openApps={openApps}
         activeApp={activeApp}
+        minimizedApps={minimizedApps}
         onCloseApp={closeApp}
         onFocusApp={setActiveApp}
+        onMinimizeApp={minimizeApp}
       />
 
       {/* Dock */}

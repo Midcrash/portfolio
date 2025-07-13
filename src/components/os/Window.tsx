@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useDragControls } from "framer-motion";
 import { X, Minus, Square } from "lucide-react";
 
 interface WindowProps {
   title: string;
   isActive: boolean;
+  isMinimized: boolean;
   onClose: () => void;
   onFocus: () => void;
+  onMinimize: () => void;
   initialPosition?: { x: number; y: number };
   children: React.ReactNode;
 }
@@ -16,12 +18,13 @@ interface WindowProps {
 const Window: React.FC<WindowProps> = ({
   title,
   isActive,
+  isMinimized,
   onClose,
   onFocus,
+  onMinimize,
   initialPosition = { x: 100, y: 100 },
   children,
 }) => {
-  const [isMinimized, setIsMinimized] = useState(false);
   const dragControls = useDragControls();
   const constraintsRef = useRef(null);
 
@@ -95,7 +98,7 @@ const Window: React.FC<WindowProps> = ({
               className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
-                setIsMinimized(!isMinimized);
+                onMinimize();
               }}
             >
               <Minus className="w-2 h-2 text-yellow-800 opacity-0 hover:opacity-100 transition-opacity" />
