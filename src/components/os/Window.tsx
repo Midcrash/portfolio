@@ -40,7 +40,7 @@ const Window: React.FC<WindowProps> = ({
       transition={{ duration: 0.2 }}
     >
       <motion.div
-        className={`pointer-events-auto absolute bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden ${
+        className={`pointer-events-auto absolute bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col ${
           isActive ? "z-50" : "z-40"
         }`}
         style={{
@@ -115,7 +115,9 @@ const Window: React.FC<WindowProps> = ({
         </div>
 
         {/* Window Content */}
-        {!isMinimized && <div className="flex-1 overflow-auto">{children}</div>}
+        {!isMinimized && (
+          <div className="flex-1 overflow-auto min-h-0">{children}</div>
+        )}
       </motion.div>
     </motion.div>
   );

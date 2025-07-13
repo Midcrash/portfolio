@@ -3,10 +3,23 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Apple, Wifi, Battery, Volume2, Search, Settings } from "lucide-react";
+import MenuDropdown from "../ui/MenuDropdown";
 
 const MenuBar: React.FC = () => {
   const [currentTime, setCurrentTime] = useState("");
   const [currentDate, setCurrentDate] = useState("");
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setActiveDropdown(null);
+    };
+
+    if (activeDropdown) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [activeDropdown]);
 
   useEffect(() => {
     const updateTime = () => {
@@ -50,12 +63,90 @@ const MenuBar: React.FC = () => {
         </motion.button>
 
         <div className="flex items-center space-x-4 text-white text-sm font-medium">
-          <span className="cursor-pointer hover:text-white/80">Portfolio</span>
-          <span className="cursor-pointer hover:text-white/80">File</span>
-          <span className="cursor-pointer hover:text-white/80">Edit</span>
-          <span className="cursor-pointer hover:text-white/80">View</span>
-          <span className="cursor-pointer hover:text-white/80">Window</span>
-          <span className="cursor-pointer hover:text-white/80">Help</span>
+          <MenuDropdown
+            title="Portfolio"
+            isActive={activeDropdown === "portfolio"}
+            onToggle={() =>
+              setActiveDropdown(
+                activeDropdown === "portfolio" ? null : "portfolio"
+              )
+            }
+            items={[
+              { label: "About This Portfolio", action: () => {} },
+              { label: "System Information", action: () => {} },
+              { type: "separator" },
+              { label: "Shut Down", action: () => {} },
+            ]}
+          />
+          <MenuDropdown
+            title="File"
+            isActive={activeDropdown === "file"}
+            onToggle={() =>
+              setActiveDropdown(activeDropdown === "file" ? null : "file")
+            }
+            items={[
+              { label: "New Window", action: () => {} },
+              { label: "Open...", action: () => {} },
+              { type: "separator" },
+              { label: "Save", action: () => {} },
+              { label: "Save As...", action: () => {} },
+            ]}
+          />
+          <MenuDropdown
+            title="Edit"
+            isActive={activeDropdown === "edit"}
+            onToggle={() =>
+              setActiveDropdown(activeDropdown === "edit" ? null : "edit")
+            }
+            items={[
+              { label: "Undo", action: () => {} },
+              { label: "Redo", action: () => {} },
+              { type: "separator" },
+              { label: "Cut", action: () => {} },
+              { label: "Copy", action: () => {} },
+              { label: "Paste", action: () => {} },
+            ]}
+          />
+          <MenuDropdown
+            title="View"
+            isActive={activeDropdown === "view"}
+            onToggle={() =>
+              setActiveDropdown(activeDropdown === "view" ? null : "view")
+            }
+            items={[
+              { label: "Show Toolbar", action: () => {} },
+              { label: "Show Status Bar", action: () => {} },
+              { type: "separator" },
+              { label: "Zoom In", action: () => {} },
+              { label: "Zoom Out", action: () => {} },
+            ]}
+          />
+          <MenuDropdown
+            title="Window"
+            isActive={activeDropdown === "window"}
+            onToggle={() =>
+              setActiveDropdown(activeDropdown === "window" ? null : "window")
+            }
+            items={[
+              { label: "Minimize", action: () => {} },
+              { label: "Zoom", action: () => {} },
+              { type: "separator" },
+              { label: "Bring All to Front", action: () => {} },
+            ]}
+          />
+          <MenuDropdown
+            title="Help"
+            isActive={activeDropdown === "help"}
+            onToggle={() =>
+              setActiveDropdown(activeDropdown === "help" ? null : "help")
+            }
+            items={[
+              { label: "Portfolio Help", action: () => {} },
+              { label: "Contact Support", action: () => {} },
+              { type: "separator" },
+              { label: "About Portfolio", action: () => {} },
+            ]}
+          />
         </div>
       </div>
 

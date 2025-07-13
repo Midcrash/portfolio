@@ -6,7 +6,7 @@ import { MapPin, Calendar, Globe, Heart } from "lucide-react";
 
 const AboutApp: React.FC = () => {
   return (
-    <div className="p-6 h-full overflow-y-auto">
+    <div className="p-6 h-full overflow-y-auto select-none">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
