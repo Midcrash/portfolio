@@ -6,6 +6,7 @@ import MenuBar from "./MenuBar";
 import Dock from "./Dock";
 import WindowManager from "./WindowManager";
 import DesktopIcon from "./DesktopIcon";
+import InitialTooltip from "../ui/InitialTooltip";
 
 const Desktop: React.FC = () => {
   const [openApps, setOpenApps] = useState<string[]>([]);
@@ -98,6 +99,9 @@ const Desktop: React.FC = () => {
         <div className="fixed bottom-0 left-0 right-0 z-40">
           <Dock onOpenApp={openApp} openApps={openApps} />
         </div>
+
+        {/* Initial Tooltip */}
+        <InitialTooltip isMobile={true} />
       </div>
     );
   }
@@ -146,6 +150,9 @@ const Desktop: React.FC = () => {
 
       {/* Dock */}
       <Dock onOpenApp={openApp} openApps={openApps} />
+
+      {/* Initial Tooltip */}
+      <InitialTooltip isMobile={false} />
     </div>
   );
 };

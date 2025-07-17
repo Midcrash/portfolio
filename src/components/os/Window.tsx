@@ -32,8 +32,8 @@ const Window: React.FC<WindowProps> = ({
 
   // Window dimensions state
   const [dimensions, setDimensions] = useState({
-    width: 600,
-    height: 500,
+    width: 750,
+    height: 600,
   });
 
   // Window position state
