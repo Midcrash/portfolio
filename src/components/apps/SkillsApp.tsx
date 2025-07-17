@@ -11,12 +11,12 @@ const SkillsApp: React.FC = () => {
       icon: <Code className="w-6 h-6" />,
       color: "blue",
       skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Vue.js", level: 80 },
-        { name: "Angular", level: 75 },
-        { name: "Tailwind CSS", level: 90 },
+        { name: "React", level: 90 },
+        { name: "React Native", level: 85 },
+        { name: "Next.js", level: 80 },
+        { name: "TypeScript", level: 75 },
+        { name: "iOS Development", level: 70 },
+        { name: "Tailwind CSS", level: 85 },
       ],
     },
     {
@@ -24,12 +24,12 @@ const SkillsApp: React.FC = () => {
       icon: <Database className="w-6 h-6" />,
       color: "green",
       skills: [
-        { name: "Node.js", level: 90 },
         { name: "Python", level: 85 },
-        { name: "Go", level: 75 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
-        { name: "Redis", level: 70 },
+        { name: "Firebase", level: 90 },
+        { name: "Node.js", level: 75 },
+        { name: "API Integration", level: 80 },
+        { name: "Real-time Systems", level: 75 },
+        { name: "POS Systems", level: 70 },
       ],
     },
     {
@@ -37,12 +37,12 @@ const SkillsApp: React.FC = () => {
       icon: <Cloud className="w-6 h-6" />,
       color: "purple",
       skills: [
-        { name: "AWS", level: 85 },
-        { name: "Docker", level: 80 },
-        { name: "Kubernetes", level: 75 },
-        { name: "CI/CD", level: 85 },
-        { name: "Terraform", level: 70 },
-        { name: "Azure", level: 65 },
+        { name: "Firebase Hosting", level: 85 },
+        { name: "Firebase Auth", level: 90 },
+        { name: "Firebase Firestore", level: 85 },
+        { name: "CI/CD", level: 70 },
+        { name: "Desktop Applications", level: 80 },
+        { name: "Real-time Data", level: 75 },
       ],
     },
     {
@@ -50,12 +50,12 @@ const SkillsApp: React.FC = () => {
       icon: <Wrench className="w-6 h-6" />,
       color: "yellow",
       skills: [
-        { name: "Git", level: 95 },
-        { name: "VS Code", level: 90 },
-        { name: "Jira", level: 85 },
-        { name: "Figma", level: 75 },
-        { name: "Postman", level: 80 },
-        { name: "Grafana", level: 70 },
+        { name: "Git", level: 90 },
+        { name: "VS Code", level: 95 },
+        { name: "Square API", level: 80 },
+        { name: "Sensor Hardware", level: 70 },
+        { name: "Load Cell Systems", level: 75 },
+        { name: "Business Consulting", level: 80 },
       ],
     },
   ];
@@ -63,10 +63,13 @@ const SkillsApp: React.FC = () => {
   const softSkills = [
     { name: "Problem Solving", icon: <TrendingUp className="w-5 h-5" /> },
     { name: "Technical Communication", icon: <Users className="w-5 h-5" /> },
-    { name: "Project Management", icon: <Wrench className="w-5 h-5" /> },
+    {
+      name: "Cross-functional Collaboration",
+      icon: <Wrench className="w-5 h-5" />,
+    },
     { name: "Customer Focus", icon: <Users className="w-5 h-5" /> },
-    { name: "Mentoring", icon: <Users className="w-5 h-5" /> },
-    { name: "Agile Methodologies", icon: <TrendingUp className="w-5 h-5" /> },
+    { name: "Strategic Consulting", icon: <Users className="w-5 h-5" /> },
+    { name: "Workflow Optimization", icon: <TrendingUp className="w-5 h-5" /> },
   ];
 
   return (
@@ -161,39 +164,39 @@ const SkillsApp: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Certifications Reminder */}
+        {/* Education & Background */}
         <motion.div
-          className="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-6"
+          className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
           <h2 className="text-xl font-bold text-gray-800 mb-3">
-            Recent Certifications
+            Education & Background
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-700">
-                AWS Solutions Architect (2023)
+                B.S. Software Engineering, San Jose State University (2021)
               </span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-700">
-                Certified Scrum Master (2022)
+                Full-stack Development Experience (2021-Present)
               </span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-700">
-                Salesforce Platform Developer (2021)
+                Customer-facing Application Development
               </span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-700">
-                Google Cloud Professional (2021)
+                Business Technology Consulting
               </span>
             </div>
           </div>

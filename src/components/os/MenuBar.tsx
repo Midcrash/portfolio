@@ -9,6 +9,19 @@ const MenuBar: React.FC = () => {
   const [currentTime, setCurrentTime] = useState("");
   const [currentDate, setCurrentDate] = useState("");
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Mobile detection
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = () => {
@@ -45,6 +58,38 @@ const MenuBar: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Mobile version
+  if (isMobile) {
+    return (
+      <motion.div
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 bg-black/20 backdrop-blur-xl border-b border-white/10"
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+      >
+        {/* Left Side - Name */}
+        <div className="flex items-center space-x-2">
+          <motion.button
+            className="p-1 rounded hover:bg-white/10 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Apple className="w-5 h-5 text-white" />
+          </motion.button>
+          <span className="text-white text-sm font-medium">Tyrae Yao</span>
+        </div>
+
+        {/* Right Side - Time only */}
+        <div className="text-white text-sm font-medium">
+          <div className="text-right">
+            <div>{currentTime}</div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Desktop version
   return (
     <motion.div
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-1 bg-black/20 backdrop-blur-xl border-b border-white/10"

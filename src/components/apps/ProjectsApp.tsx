@@ -1,43 +1,208 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github, Zap, Shield, Smartphone } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  Zap,
+  Smartphone,
+  ChevronLeft,
+  ChevronRight,
+  BarChart3,
+  Package,
+} from "lucide-react";
+
+// Image Carousel Component
+const ImageCarousel: React.FC<{ images: string[]; projectTitle: string }> = ({
+  images,
+  projectTitle,
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!images || images.length === 0) {
+    return (
+      <div className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <span className="text-gray-400">No images available</span>
+      </div>
+    );
+  }
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-gray-100">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`${projectTitle} screenshot ${currentIndex + 1}`}
+          className="w-full h-full object-cover"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.3 }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = "none";
+            const parent = target.parentElement;
+            if (parent && !parent.querySelector(".fallback-message")) {
+              const fallback = document.createElement("div");
+              fallback.className =
+                "fallback-message w-full h-full flex items-center justify-center text-gray-400";
+              fallback.textContent = "Image not found";
+              parent.appendChild(fallback);
+            }
+          }}
+        />
+      </AnimatePresence>
+
+      {/* Navigation Arrows */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prevImage}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full transition-colors"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </>
+      )}
+
+      {/* Dots Indicator */}
+      {images.length > 1 && (
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? "bg-white" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Image Counter */}
+      {images.length > 1 && (
+        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded text-xs">
+          {currentIndex + 1} / {images.length}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ProjectsApp: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
+      title: "iVMI",
       description:
-        "Full-stack e-commerce solution with real-time inventory management and payment processing",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe API", "Redis"],
+        "Full-stack inventory management solution providing seamless web and iOS mobile application experience with real-time data synchronization",
+      tech: [
+        "React Native",
+        "Firebase",
+        "Authentication",
+        "Database Management",
+        "Hosting",
+      ],
       icon: <Smartphone className="w-8 h-8" />,
       color: "blue",
-      demo: "https://demo.example.com",
-      github: "https://github.com/example/project1",
+      demo: "https://ivmi.com",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/ivmi/screenshot1.png",
+        "/projects/ivmi/screenshot2.png",
+        "/projects/ivmi/screenshot3.png",
+      ],
     },
     {
       id: 2,
-      title: "Security Dashboard",
+      title: "EFT Guessr",
       description:
-        "Enterprise security monitoring dashboard with threat detection and analytics",
-      tech: ["Vue.js", "Python", "MongoDB", "Docker", "Kubernetes"],
-      icon: <Shield className="w-8 h-8" />,
+        "Interactive gaming platform showcasing custom game mechanics and user interface elements with comprehensive analytics and scoring system",
+      tech: [
+        "React",
+        "Firebase Firestore",
+        "Game Development",
+        "Analytics",
+        "Backend Interface",
+      ],
+      icon: <Zap className="w-8 h-8" />,
       color: "green",
-      demo: "https://demo.example.com",
-      github: "https://github.com/example/project2",
+      demo: "https://eftguessr.com",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/eft-guessr/screenshot1.png",
+        "/projects/eft-guessr/screenshot2.png",
+        "/projects/eft-guessr/screenshot3.png",
+      ],
     },
     {
       id: 3,
-      title: "Performance Analytics",
+      title: "KPI Dashboard",
       description:
-        "Real-time performance monitoring and analytics platform for web applications",
-      tech: ["Angular", "Go", "InfluxDB", "Grafana", "AWS"],
-      icon: <Zap className="w-8 h-8" />,
-      color: "yellow",
-      demo: "https://demo.example.com",
-      github: "https://github.com/example/project3",
+        "Custom KPI dashboard utilizing Square API and Firebase backend with real-time updates to display valuable key performance indicators for multiple restaurant locations",
+      tech: [
+        "React",
+        "Square API",
+        "Firebase",
+        "Real-time Database",
+        "Data Visualization",
+        "Multi-location Analytics",
+      ],
+      icon: <BarChart3 className="w-8 h-8" />,
+      color: "purple",
+      demo: "https://kpi-dashboard.example.com",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/kpi-dashboard/screenshot1.png",
+        "/projects/kpi-dashboard/screenshot2.png",
+        "/projects/kpi-dashboard/screenshot3.png",
+      ],
+    },
+    {
+      id: 4,
+      title: "Inventory Hero",
+      description:
+        "Real-time inventory management application designed for restaurant teams to efficiently track in-store stock levels. Features an intuitive checklist system that enables inventory staff to identify and prioritize items requiring restocking, ensuring optimal inventory levels across operations.",
+      tech: [
+        "React",
+        "Firebase",
+        "Real-time Database",
+        "Inventory Management",
+        "Restaurant Operations",
+        "Team Collaboration",
+      ],
+      icon: <Package className="w-8 h-8" />,
+      color: "orange",
+      demo: "https://inventory-hero.example.com",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/inventory-hero/screenshot1.png",
+        "/projects/inventory-hero/screenshot2.png",
+        "/projects/inventory-hero/screenshot3.png",
+      ],
     },
   ];
 
@@ -104,6 +269,12 @@ const ProjectsApp: React.FC = () => {
                   </motion.a>
                 </div>
               </div>
+
+              {/* Image Carousel */}
+              <ImageCarousel
+                images={project.images}
+                projectTitle={project.title}
+              />
 
               {/* Project Description */}
               <p className="text-gray-600 mb-4">{project.description}</p>

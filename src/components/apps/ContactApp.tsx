@@ -8,7 +8,6 @@ import {
   MapPin,
   Linkedin,
   Github,
-  Twitter,
   Send,
   Calendar,
   Globe,
@@ -48,19 +47,19 @@ const ContactApp: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "john.doe@email.com",
-      link: "mailto:john.doe@email.com",
+      value: "yaotyrae@gmail.com",
+      link: "mailto:yaotyrae@gmail.com",
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "(408) 477-0339",
+      link: "tel:+14084770339",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "San Jose, CA",
       link: null,
     },
     {
@@ -75,20 +74,14 @@ const ContactApp: React.FC = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/johndoe",
+      url: "https://www.linkedin.com/in/tyrae-yao-08b684154/",
       color: "blue",
     },
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      url: "https://github.com/johndoe",
+      url: "https://github.com/Midcrash",
       color: "gray",
-    },
-    {
-      icon: <Twitter className="w-5 h-5" />,
-      label: "Twitter",
-      url: "https://twitter.com/johndoe",
-      color: "blue",
     },
   ];
 

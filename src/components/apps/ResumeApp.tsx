@@ -46,76 +46,57 @@ const ResumeApp: React.FC = () => {
           <div className="space-y-6">
             <div className="border-l-4 border-blue-500 pl-6">
               <h3 className="text-xl font-semibold text-gray-800">
-                Senior Solution Engineer
+                Software Engineer
               </h3>
-              <p className="text-gray-600 font-medium">TechCorp Solutions</p>
-              <p className="text-sm text-gray-500 mb-3">Jan 2022 - Present</p>
+              <p className="text-gray-600 font-medium">Loadstar Sensors</p>
+              <p className="text-sm text-gray-500 mb-3">Aug 2023 - June 2025</p>
               <ul className="space-y-2 text-gray-700">
                 <li>
-                  • Led technical discovery sessions with enterprise clients,
-                  resulting in 40% faster deal closure
+                  • Led full-stack development of customer-facing iOS and web
+                  applications using React Native
                 </li>
                 <li>
-                  • Designed and implemented custom integrations for Fortune 500
-                  companies
+                  • Developed desktop application using Python to interface with
+                  load cell sensors
                 </li>
                 <li>
-                  • Collaborated with product teams to influence roadmap based
-                  on customer feedback
+                  • Built and deployed scalable backend infrastructure with
+                  Firebase (Auth, Firestore, Hosting)
                 </li>
                 <li>
-                  • Mentored junior engineers and established best practices for
-                  solution engineering
+                  • Partnered with cross-functional teams to define solutions
+                  aligned with real-time sensor hardware
+                </li>
+                <li>
+                  • Enhanced platform accessibility and user engagement through
+                  improved UX design
                 </li>
               </ul>
             </div>
 
             <div className="border-l-4 border-green-500 pl-6">
               <h3 className="text-xl font-semibold text-gray-800">
-                Solution Engineer
+                Tech Consultant
               </h3>
-              <p className="text-gray-600 font-medium">InnovateTech</p>
-              <p className="text-sm text-gray-500 mb-3">Mar 2020 - Dec 2021</p>
+              <p className="text-gray-600 font-medium">Freelance</p>
+              <p className="text-sm text-gray-500 mb-3">Jul 2021 - Present</p>
               <ul className="space-y-2 text-gray-700">
                 <li>
-                  • Supported sales team with technical expertise during
-                  customer demos and POCs
+                  • Provided strategic technology consulting for local
+                  restaurants & barbershops
                 </li>
                 <li>
-                  • Developed custom solutions and integrations for mid-market
-                  customers
+                  • Implemented POS integration (Square), automation, and
+                  workflow optimization
                 </li>
                 <li>
-                  • Created technical documentation and implementation guides
+                  • Designed and implemented real-time KPI custom dashboards
+                  using React and Next.js
                 </li>
+                <li>• Built inventory management tools using POS APIs</li>
                 <li>
-                  • Achieved 95% customer satisfaction rating in
-                  post-implementation surveys
-                </li>
-              </ul>
-            </div>
-
-            <div className="border-l-4 border-purple-500 pl-6">
-              <h3 className="text-xl font-semibold text-gray-800">
-                Full Stack Developer
-              </h3>
-              <p className="text-gray-600 font-medium">StartupXYZ</p>
-              <p className="text-sm text-gray-500 mb-3">Jun 2019 - Feb 2020</p>
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                  • Built scalable web applications using React, Node.js, and
-                  PostgreSQL
-                </li>
-                <li>
-                  • Implemented CI/CD pipelines and automated testing frameworks
-                </li>
-                <li>
-                  • Collaborated with UX designers to create intuitive user
-                  interfaces
-                </li>
-                <li>
-                  • Optimized application performance resulting in 50% faster
-                  load times
+                  • Served as trusted technical advisor delivering practical,
+                  cost-effective systems
                 </li>
               </ul>
             </div>
@@ -136,56 +117,51 @@ const ResumeApp: React.FC = () => {
 
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800">
-              Bachelor of Science in Computer Science
+              Bachelor of Science in Software Engineering
             </h3>
             <p className="text-gray-600 font-medium">
-              University of California, Berkeley
+              San Jose State University
             </p>
-            <p className="text-sm text-gray-500 mb-3">2015 - 2019</p>
+            <p className="text-sm text-gray-500 mb-3">2021</p>
             <p className="text-gray-700">
-              Relevant Coursework: Data Structures, Algorithms, Database
-              Systems, Software Engineering, Computer Networks, Machine Learning
+              Relevant Coursework: Software Engineering, Data Structures,
+              Algorithms, Database Systems, Computer Networks, Full-stack
+              Development, Mobile Application Development
             </p>
           </div>
         </motion.div>
 
-        {/* Certifications Section */}
+        {/* Projects Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <Award className="w-6 h-6 mr-2 text-yellow-500" />
-            Certifications
+            <Award className="w-6 h-6 mr-2 text-purple-500" />
+            Key Projects
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white border border-gray-200 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">
-                AWS Solutions Architect
-              </h3>
-              <p className="text-sm text-gray-500">
-                Amazon Web Services • 2023
+              <h3 className="font-semibold text-gray-800">iVMI (ivmi.com)</h3>
+              <p className="text-sm text-gray-500 mb-2">
+                Full-stack inventory management solution
+              </p>
+              <p className="text-sm text-gray-600">
+                React Native, Firebase, iOS app with seamless web integration
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800">
-                Certified Scrum Master
+                EFT Guessr (eftguessr.com)
               </h3>
-              <p className="text-sm text-gray-500">Scrum Alliance • 2022</p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">
-                Salesforce Platform Developer
-              </h3>
-              <p className="text-sm text-gray-500">Salesforce • 2021</p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">
-                Google Cloud Professional
-              </h3>
-              <p className="text-sm text-gray-500">Google Cloud • 2021</p>
+              <p className="text-sm text-gray-500 mb-2">
+                Interactive gaming platform
+              </p>
+              <p className="text-sm text-gray-600">
+                React, Firebase Firestore, custom game mechanics and analytics
+              </p>
             </div>
           </div>
         </motion.div>
