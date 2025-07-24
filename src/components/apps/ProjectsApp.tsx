@@ -11,6 +11,7 @@ import {
   ChevronRight,
   BarChart3,
   Package,
+  Briefcase,
 } from "lucide-react";
 
 // Image Carousel Component
@@ -116,6 +117,44 @@ const ProjectsApp: React.FC = () => {
   const projects = [
     {
       id: 1,
+      title: "macOS Portfolio",
+      description:
+        "Front-End interactive macOS portfolio website using React, Framer Motion.",
+      tech: ["React", "Framer Motion", "TypeScript", "Next.js"],
+      icon: <Briefcase className="w-8 h-8" />,
+      color: "blue",
+      demo: "https://tyrae.dev",
+      github: "https://github.com/Midcrash/portfolio",
+      images: [
+        "/projects/macOS-portfolio/screenshot1.png",
+        "/projects/macOS-portfolio/screenshot2.png",
+        "/projects/macOS-portfolio/screenshot3.png",
+      ],
+    },
+    {
+      id: 2,
+      title: "EFT Guessr",
+      description:
+        "Interactive gaming platform showcasing custom game mechanics and user interface elements with comprehensive analytics and scoring system",
+      tech: [
+        "React",
+        "Firebase Firestore",
+        "Game Development",
+        "Analytics",
+        "Backend Interface",
+      ],
+      icon: <Zap className="w-8 h-8" />,
+      color: "blue",
+      demo: "https://eftguessr.com",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/eft-guessr/screenshot1.png",
+        "/projects/eft-guessr/screenshot2.png",
+        "/projects/eft-guessr/screenshot3.png",
+      ],
+    },
+    {
+      id: 3,
       title: "iVMI",
       description:
         "Full-stack inventory management solution providing seamless web and iOS mobile application experience with real-time data synchronization",
@@ -137,51 +176,6 @@ const ProjectsApp: React.FC = () => {
       ],
     },
     {
-      id: 2,
-      title: "EFT Guessr",
-      description:
-        "Interactive gaming platform showcasing custom game mechanics and user interface elements with comprehensive analytics and scoring system",
-      tech: [
-        "React",
-        "Firebase Firestore",
-        "Game Development",
-        "Analytics",
-        "Backend Interface",
-      ],
-      icon: <Zap className="w-8 h-8" />,
-      color: "green",
-      demo: "https://eftguessr.com",
-      github: "https://github.com/Midcrash",
-      images: [
-        "/projects/eft-guessr/screenshot1.png",
-        "/projects/eft-guessr/screenshot2.png",
-        "/projects/eft-guessr/screenshot3.png",
-      ],
-    },
-    {
-      id: 3,
-      title: "KPI Dashboard",
-      description:
-        "Custom KPI dashboard utilizing Square API and Firebase backend with real-time updates to display valuable key performance indicators for multiple restaurant locations",
-      tech: [
-        "React",
-        "Square API",
-        "Firebase",
-        "Real-time Database",
-        "Data Visualization",
-        "Multi-location Analytics",
-      ],
-      icon: <BarChart3 className="w-8 h-8" />,
-      color: "purple",
-      demo: "https://kpi-dashboard.example.com",
-      github: "https://github.com/Midcrash",
-      images: [
-        "/projects/kpi-dashboard/screenshot1.png",
-        "/projects/kpi-dashboard/screenshot2.png",
-        "/projects/kpi-dashboard/screenshot3.png",
-      ],
-    },
-    {
       id: 4,
       title: "Inventory Hero",
       description:
@@ -195,13 +189,29 @@ const ProjectsApp: React.FC = () => {
         "Team Collaboration",
       ],
       icon: <Package className="w-8 h-8" />,
-      color: "orange",
+      color: "blue",
       demo: "https://inventory-hero.example.com",
       github: "https://github.com/Midcrash",
       images: [
         "/projects/inventory-hero/screenshot1.png",
         "/projects/inventory-hero/screenshot2.png",
         "/projects/inventory-hero/screenshot3.png",
+      ],
+    },
+    {
+      id: 5,
+      title: "Portfolio V1 Minecraft",
+      description:
+        "Front-End interactive 3d portfolio website using React, React Three Fiber (Three.js). Learned how to use Blender to create 3D models and textures.",
+      tech: ["React", "React Three Fiber", "Minecraft", "Blender"],
+      icon: <Package className="w-8 h-8" />,
+      color: "blue",
+      demo: "https://r3f-minecraft-portfolio.vercel.app/",
+      github: "https://github.com/Midcrash",
+      images: [
+        "/projects/portfolio-v1/screenshot1.png",
+        "/projects/portfolio-v1/screenshot2.png",
+        "/projects/portfolio-v1/screenshot3.png",
       ],
     },
   ];

@@ -144,6 +144,17 @@ const ResumeApp: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800">
+                macOS Portfolio (tyrae.dev)
+              </h3>
+              <p className="text-sm text-gray-500 mb-2">
+                Interactive portfolio
+              </p>
+              <p className="text-sm text-gray-600">
+                React, Framer Motion, TypeScript, Next.js
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800">iVMI (ivmi.com)</h3>
               <p className="text-sm text-gray-500 mb-2">
                 Full-stack inventory management solution
