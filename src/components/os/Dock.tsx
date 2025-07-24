@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -201,7 +202,15 @@ const Dock: React.FC<DockProps> = ({ onOpenApp, openApps }) => {
 
   const systemApps = [
     {
-      icon: <img src="/vscode.png" alt="VS Code" className={`${iconSize}`} />,
+      icon: (
+        <Image
+          src="/vscode.png"
+          alt="VS Code"
+          width={24}
+          height={24}
+          className={iconSize.includes("w-5") ? "w-5 h-5" : "w-6 h-6"}
+        />
+      ),
       label: "VS Code",
       appId: "vscode",
     },

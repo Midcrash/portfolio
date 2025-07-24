@@ -66,7 +66,11 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
         );
       case "image":
         return (
-          <Image {...iconProps} className="text-green-400 drop-shadow-lg" />
+          <Image
+            {...iconProps}
+            className="text-green-400 drop-shadow-lg"
+            aria-label="Image file icon"
+          />
         );
       case "music":
         return (

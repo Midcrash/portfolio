@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Tyrae Yao, Software Engineer with experience in full-stack development, customer-facing applications, and technical consulting.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
