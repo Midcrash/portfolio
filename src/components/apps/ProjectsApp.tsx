@@ -304,7 +304,7 @@ const ProjectsApp: React.FC = () => {
         </div>
 
         {/* Additional Section */}
-        <motion.div
+        {/* <motion.div
           className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -344,7 +344,7 @@ const ProjectsApp: React.FC = () => {
               <span className="text-sm text-gray-500">+200 lines</span>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );
