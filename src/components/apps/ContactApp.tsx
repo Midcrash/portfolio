@@ -108,7 +108,40 @@ const ContactApp: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
+            {/* Contact Details */}
             <div className="bg-white border border-gray-200 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                Contact Information
+              </h2>
+
+              <div className="space-y-4">
+                {contactInfo.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                  >
+                    <div className="text-blue-600">{item.icon}</div>
+                    <div>
+                      <p className="text-sm text-gray-500">{item.label}</p>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          className="text-gray-800 hover:text-blue-600 transition-colors"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-800">{item.value}</p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            {/* <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Send a Message
               </h2>
@@ -207,7 +240,7 @@ const ContactApp: React.FC = () => {
                   )}
                 </motion.button>
               </form>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Contact Information */}
@@ -217,40 +250,6 @@ const ContactApp: React.FC = () => {
             transition={{ delay: 0.4 }}
             className="space-y-6"
           >
-            {/* Contact Details */}
-            <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                Contact Information
-              </h2>
-
-              <div className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1 }}
-                  >
-                    <div className="text-blue-600">{item.icon}</div>
-                    <div>
-                      <p className="text-sm text-gray-500">{item.label}</p>
-                      {item.link ? (
-                        <a
-                          href={item.link}
-                          className="text-gray-800 hover:text-blue-600 transition-colors"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-gray-800">{item.value}</p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
             {/* Social Links */}
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
@@ -282,7 +281,7 @@ const ContactApp: React.FC = () => {
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-6">
+            {/* <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">
                 Quick Actions
               </h2>
@@ -307,7 +306,7 @@ const ContactApp: React.FC = () => {
                   <span>Download Resume</span>
                 </motion.a>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </motion.div>

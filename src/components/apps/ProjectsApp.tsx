@@ -9,7 +9,6 @@ import {
   Smartphone,
   ChevronLeft,
   ChevronRight,
-  BarChart3,
   Package,
   Briefcase,
 } from "lucide-react";
