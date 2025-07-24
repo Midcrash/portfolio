@@ -71,7 +71,7 @@ This is a fully interactive macOS experience showcasing my journey as a Software
 About Me:
 - Software Engineer at Loadstar Sensors (Aug 2023 - June 2025)
 - Freelance Tech Consultant (Jul 2021 - Present)
-- B.S. in Software Engineering from San Jose State University (2021)
+- B.S. in Software Engineering from San Jose State University (2022)
 - Specializing in React Native, Firebase, and customer-facing applications
 
 What you'll find here:

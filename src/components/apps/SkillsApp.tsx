@@ -178,7 +178,7 @@ const SkillsApp: React.FC = () => {
             <div className="flex items-center space-x-3">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-700">
-                B.S. Software Engineering, San Jose State University (2021)
+                B.S. Software Engineering, San Jose State University (2022)
               </span>
             </div>
             <div className="flex items-center space-x-3">

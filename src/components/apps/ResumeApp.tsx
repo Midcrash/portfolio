@@ -5,6 +5,16 @@ import { motion } from "framer-motion";
 import { Download, GraduationCap, Briefcase, Award } from "lucide-react";
 
 const ResumeApp: React.FC = () => {
+  const handleDownloadPDF = () => {
+    // Create a link element and trigger download
+    const link = document.createElement("a");
+    link.href = "/Tyrae_Yao_Resume.pdf"; // Path to your PDF in the public folder
+    link.download = "Tyrae_Yao_Resume.pdf"; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="p-6 h-full overflow-y-auto select-none">
       <motion.div
@@ -23,6 +33,7 @@ const ResumeApp: React.FC = () => {
           </div>
           <motion.button
             className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            onClick={handleDownloadPDF}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -122,7 +133,7 @@ const ResumeApp: React.FC = () => {
             <p className="text-gray-600 font-medium">
               San Jose State University
             </p>
-            <p className="text-sm text-gray-500 mb-3">2021</p>
+            <p className="text-sm text-gray-500 mb-3">2022</p>
             <p className="text-gray-700">
               Relevant Coursework: Software Engineering, Data Structures,
               Algorithms, Database Systems, Computer Networks, Full-stack
