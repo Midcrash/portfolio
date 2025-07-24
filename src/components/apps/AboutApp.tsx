@@ -24,7 +24,7 @@ const AboutApp: React.FC = () => {
             TY
           </motion.div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Tyrae Yao</h1>
-          <p className="text-xl text-gray-600">Solution Engineer</p>
+          <p className="text-xl text-gray-600">Software Engineer</p>
         </div>
 
         {/* Quick Info */}
@@ -74,7 +74,7 @@ const AboutApp: React.FC = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">About Me</h2>
             <div className="space-y-4 text-gray-700">
               <p>
-                I&apos;m a Solution Engineer with a strong foundation in
+                I&apos;m a Software Engineer with a strong foundation in
                 software development and a passion for bridging technical
                 complexity with business value. Currently transitioning from my
                 role as a Software Engineer to focus on customer-facing
@@ -85,14 +85,18 @@ const AboutApp: React.FC = () => {
                 Jose State University, where I developed expertise in full-stack
                 development. At Loadstar Sensors, I led development of
                 customer-facing iOS and web applications using React Native, and
-                built scalable backend infrastructure with Firebase.
+                built scalable backend infrastructure with Firebase. During my
+                freelance work, I developed several custom solutions—including
+                KPI dashboards and inventory management systems—by integrating
+                various APIs and technologies.
               </p>
               <p>
                 I thrive in environments where I can combine technical depth
                 with customer empathy, helping organizations solve complex
                 problems through innovative technology solutions. My experience
-                spans from real-time sensor data systems to POS integrations and
-                custom dashboards.
+                spans from real-time sensor data systems to API integrations and
+                custom dashboards. I am currently working learning and
+                implementing the usage of AI into my personal projects.
               </p>
             </div>
           </div>

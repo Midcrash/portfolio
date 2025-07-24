@@ -19,9 +19,14 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "Tyrae Yao - Solution Engineer Portfolio",
+  title: "Tyrae Yao - Software Engineer",
   description:
-    "Portfolio of Tyrae Yao, Solution Engineer with experience in full-stack development, customer-facing applications, and technical consulting.",
+    "Portfolio of Tyrae Yao, Software Engineer with experience in full-stack development, customer-facing applications, and technical consulting.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

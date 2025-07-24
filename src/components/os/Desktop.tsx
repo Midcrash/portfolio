@@ -40,6 +40,12 @@ const Desktop: React.FC = () => {
       type: "easter-egg" as const,
       position: { x: 50, y: 200 },
     },
+    {
+      id: "chat",
+      name: "🤖 AI Chat.app",
+      type: "app" as const,
+      position: { x: 50, y: 300 },
+    },
   ];
 
   const openApp = (appId: string) => {

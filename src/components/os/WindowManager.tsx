@@ -9,6 +9,7 @@ import ProjectsApp from "../apps/ProjectsApp";
 import SkillsApp from "../apps/SkillsApp";
 import ExperienceApp from "../apps/ExperienceApp";
 import ContactApp from "../apps/ContactApp";
+import ChatApp from "../apps/ChatApp";
 import VSCodeApp from "../apps/VSCodeApp";
 import TextViewerApp from "../apps/TextViewerApp";
 
@@ -57,13 +58,15 @@ const WindowManager: React.FC<WindowManagerProps> = ({
         return <ExperienceApp />;
       case "contact":
         return <ContactApp />;
+      case "chat":
+        return <ChatApp />;
       case "readme":
         return (
           <TextViewerApp
             title="README.txt"
             content="Welcome to Tyrae Yao's Portfolio! 🚀
 
-This is a fully interactive macOS experience showcasing my journey as a Solution Engineer with a strong foundation in software development. Built with React, Next.js, and lots of passion for creating exceptional user experiences.
+This is a fully interactive macOS experience showcasing my journey as a Software Engineer with a strong foundation in software development. Built with React, Next.js, and lots of passion for creating exceptional user experiences.
 
 About Me:
 - Software Engineer at Loadstar Sensors (Aug 2023 - June 2025)
@@ -131,6 +134,8 @@ Keep coding and stay caffeinated! 🚀
         return "Experience";
       case "contact":
         return "Contact";
+      case "chat":
+        return "AI Chat";
       case "readme":
         return "README.txt";
       case "coffee-thoughts":
